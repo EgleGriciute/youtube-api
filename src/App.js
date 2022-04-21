@@ -1,4 +1,3 @@
-import "./App.css";
 import youtube from "./api/youtube";
 import { Grid } from "@material-ui/core";
 import { useState } from "react";
@@ -34,7 +33,7 @@ function App() {
       params: {
         part: "snippet",
         maxResults: 4,
-        key: "AIzaSyCyROXq2CmCqPKg2mlaaMSysrEVnFOAo1M",
+        key: process.env.REACT_APP_API_KEY,
         q: searchItem,
       },
     });

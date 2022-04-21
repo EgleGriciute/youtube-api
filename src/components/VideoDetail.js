@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, Typography } from "@material-ui/core";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const VideoDetail = ({
   video: {
@@ -7,7 +8,13 @@ const VideoDetail = ({
     snippet: { title, channelTitle, description },
   },
 }) => {
-  if (!videoId) return <div>Loading...</div>;
+  if (!videoId)
+    return (
+      <div>
+        <ArrowUpwardIcon style={{ marginLeft: "2vw" }} />
+        <h1>Type in a search bar to find youtube videos</h1>
+      </div>
+    );
 
   const videoSrc = `https://www.youtube.com/embed/${videoId}`;
 
